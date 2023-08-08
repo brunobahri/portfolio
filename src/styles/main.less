@@ -1,0 +1,114 @@
+@import "mapas.less";
+
+@breakpointMobile:~"(max-width:767px)";
+@breakpointTablet:~"(min-width: 768px) and (max-width:1023px)";
+
+.marginBottom8 {
+    margin-bottom: 8px;
+}
+
+* {
+    font-family: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+
+body {
+    background-color: #color[backgroundColor];
+    color: #color[textColor]
+}
+
+.container {
+    max-width: 960px;
+    width: 150%;
+    margin: 0 auto;
+    height: 1000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    @media @breakpointTablet {
+        max-width: 80%;
+        height: 200%;
+
+    }
+    @media @breakpointMobile {
+        max-width: 70%;
+        height: 200%;
+        }
+    }
+
+
+
+li {
+    list-style: none;
+}
+
+header {
+    padding-bottom: 24px;
+    .profile-pic {
+        display: block;
+        margin: 0 auto 24px;
+        border-radius: 50%;
+        margin-top: 100px;
+    }
+}
+
+.profile-bio {
+    text-align: center;
+    &-name{
+        font-size: 16px;
+        .marginBottom8()
+    }
+
+    &-subtitle {
+        font-size: 14px;
+        .marginBottom8()
+    }
+
+    &-description {
+        font-size: 14px;
+        opacity: .7;
+    }
+}
+
+.social-links {
+    display: flex;
+    justify-content: space-between;
+    max-width: 280px;
+    width: 100%;
+    margin: 0 auto;
+    li {
+        
+        img {
+            transition: all ease .3s;
+            &:hover {
+                transform: scale(1.4);
+            }
+        }
+    }
+}
+
+.projects-list {
+    &-item {
+        a {
+            text-decoration: none;
+            background-color: #color[buttonColor];
+            display: block;
+            padding: 16px 20px;
+            margin-bottom: 16px;
+            text-align: center;
+            color: #color[textColor];
+            font-weight: bold;
+            border-radius: 30px;
+            border: 2px solid #color[buttonColor];
+            transition: all ease .5s;
+
+            &:hover {
+                color: #color[buttonColor];
+                background-color: transparent  ;
+            }
+        }
+    }
+}
