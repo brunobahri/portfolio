@@ -16,7 +16,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '16'  # Atualize para a versão 16
+          node-version: '14'
 
       - name: Display Node.js version
         run: node -v
@@ -37,7 +37,7 @@ jobs:
 
       - name: Display build logs on failure
         if: failure()
-        run: cat /home/runner/.npm/_logs/*.log
+        run: cat /home/runner/.npm/_logs/*-debug.log
 
       - name: Deploy to GitHub Pages
         if: success()
