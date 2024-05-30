@@ -37,10 +37,17 @@ jobs:
 
       - name: Display build logs on failure
         if: failure()
-        run: cat /home/runner/.npm/_logs/*-debug.log
+        run: |
+          echo "Build failed, displaying logs:"
+          cat /home/runner/.npm/_logs/*-debug.log
 
       - name: Deploy to GitHub Pages
-        if: success()
         run: npm run deploy
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Display deploy logs on failure
+        if: failure()
+        run: |
+          echo "Deploy failed, displaying logs:"
+          cat /home/runner/.npm/_logs/*-debug.log
