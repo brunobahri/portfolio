@@ -40,18 +40,12 @@ jobs:
           npm install -g cross-env
           cross-env CI=false npm run build
 
-      - name: Display build logs on failure
-        if: failure()
-        run: |
-          echo "Build failed, displaying logs:"
-          cat /home/runner/.npm/_logs/*-debug.log
-
       - name: Deploy to GitHub Pages
-        run: |
-          npm install -g cross-env
-          cross-env CI=false npm run deploy
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+          npx gh-pages -d build
 
       - name: Display deploy logs on failure
         if: failure()
