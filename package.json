@@ -52,6 +52,14 @@
       "last 1 safari version"
     ]
   },
+  "autoprefixer": {
+    "overrideBrowserslist": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "grid": true
+  },
   "devDependencies": {
     "gh-pages": "^6.1.1"
   }

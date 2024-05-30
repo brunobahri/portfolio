@@ -26,7 +26,8 @@ jobs:
 
       - name: Build the React app
         run: |
-          CI=false npm run build
+          export CI=false
+          npm run build
 
       - name: Deploy to GitHub Pages
         run: npm run deploy
