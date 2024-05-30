@@ -30,6 +30,11 @@ jobs:
       - name: Update Browserslist database
         run: npx browserslist@latest --update-db
 
+      - name: Configure Git
+        run: |
+          git config --global user.email "brunobahri27@gmail.com"
+          git config --global user.name "brunobahri"
+
       - name: Build the React app
         run: |
           npm install -g cross-env
