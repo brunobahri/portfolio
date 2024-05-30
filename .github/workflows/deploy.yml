@@ -42,7 +42,9 @@ jobs:
           cat /home/runner/.npm/_logs/*-debug.log
 
       - name: Deploy to GitHub Pages
-        run: npm run deploy
+        run: |
+          npm install -g cross-env
+          cross-env CI=false npm run deploy
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
