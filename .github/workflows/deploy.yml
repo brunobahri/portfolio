@@ -26,8 +26,8 @@ jobs:
 
       - name: Build the React app
         run: |
-          export CI=false
-          npm run build
+          npm install -g cross-env
+          cross-env CI=false npm run build
 
       - name: Deploy to GitHub Pages
         run: npm run deploy
